@@ -1,2 +1,5 @@
+include ':domain-layer'
+include ':data-layer'
+include ':presentation-layer'
 include ':app'
 rootProject.name = "FintonicTestChallenge"

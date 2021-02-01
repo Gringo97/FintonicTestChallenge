@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
 }
 
@@ -8,13 +8,13 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.fintonic.fintonictestchallenge"
         minSdkVersion 27
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -35,18 +35,19 @@ android {
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-
-    // Architecture modules
-    implementation project(path: ':data-layer')
-    implementation project(path: ':presentation-layer')
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_core_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
     implementation project(path: ':domain-layer')
+
+    // other modules
+    implementation project(':domain-layer')
 
     // 3rd party libraries
     implementation "org.koin:koin-android:$koin_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
+    //testing
     testImplementation 'junit:junit:4.+'
-
-
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
