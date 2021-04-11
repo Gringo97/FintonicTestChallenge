@@ -3,7 +3,6 @@ package com.fintonic.fintonictestchallenge
 import android.app.Application
 import com.fintonic.data_layer.di.dataLayerModule
 import com.fintonic.domain_layer.di.domainLayerModule
-import com.fintonic.fintonictestchallenge.di.appModule
 import com.fintonic.presentation_layer.di.presentationLayerModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -16,11 +15,8 @@ class FintonicChallengeApp : Application() {
         startKoin {
             androidLogger()
             androidContext(this@FintonicChallengeApp)
-            modules(listOf(presentationLayerModule, domainLayerModule, dataLayerModule,appModule))
+            modules(listOf(presentationLayerModule, domainLayerModule, dataLayerModule))
         }
     }
-
-
-
 
 }
