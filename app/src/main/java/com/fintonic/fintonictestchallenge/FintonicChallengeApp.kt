@@ -19,7 +19,4 @@ class FintonicChallengeApp : Application() {
         }
     }
 
-
-
-
 }

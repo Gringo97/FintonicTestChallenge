@@ -18,9 +18,14 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField 'String', 'BASE_URL', '"https://api.punkapi.com/"'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'BASE_URL', '"https://api.punkapi.com/"'
         }
     }
     compileOptions {
@@ -35,7 +40,7 @@ android {
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation "androidx.core:core-ktx:$corektx_version"
 
     // Architecture modules
     implementation project(path: ':data-layer')
@@ -44,9 +49,8 @@ dependencies {
 
     // 3rd party libraries
     implementation "org.koin:koin-android:$koin_version"
+
     testImplementation 'junit:junit:4.+'
-
-
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
