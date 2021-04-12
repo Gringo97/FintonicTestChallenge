@@ -10,7 +10,7 @@ import org.koin.dsl.module
 
 val presentationLayerModule = module(override = true) {
 
-    
+
     viewModel { BeersActivityViewModel(bridge = BaseDomainLayerBridge.None) }
     viewModel {
         BeersListViewModel(

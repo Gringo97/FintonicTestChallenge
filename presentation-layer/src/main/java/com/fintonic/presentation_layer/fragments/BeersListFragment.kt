@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import arrow.core.None
 import com.fintonic.domain_layer.domain.Beer
 import com.fintonic.domain_layer.feature.BeersDomainLayerBridge
 import com.fintonic.presentation_layer.base.BaseMvvmView
@@ -18,20 +17,20 @@ class BeersListFragment : Fragment(),
     BaseMvvmView<BeersListViewModel, BeersDomainLayerBridge<List<Beer>>, BeersListState> {
     override val viewModel: BeersListViewModel by viewModel()
 
-    private lateinit var  binding: BeersListFragmentBinding
+    private lateinit var binding: BeersListFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ) = BeersListFragmentBinding.inflate(
-    LayoutInflater.from(context),
-    container,
-    false
+        LayoutInflater.from(context),
+        container,
+        false
     ).apply {
         binding = this
         binding.apply {
-          //  viewModel = mViewModel
-          //  lifecycleOwner = viewLifecycleOwner
+            //  viewModel = mViewModel
+            //  lifecycleOwner = viewLifecycleOwner
         }
     }.root
 

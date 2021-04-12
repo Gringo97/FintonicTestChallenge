@@ -1,17 +1,15 @@
 package com.fintonic.domain_layer.feature
 
 import arrow.core.Either
-import arrow.core.None
 import com.fintonic.domain_layer.DomainLayerContract
 import com.fintonic.domain_layer.base.BaseDomainLayerBridge
 import com.fintonic.domain_layer.domain.Beer
 import com.fintonic.domain_layer.domain.FailureBo
-import com.fintonic.domain_layer.usecase.FetchBeersListUc
 import kotlinx.coroutines.CoroutineScope
 
 const val BEERS_BRIDGE_TAG = "beersDomainLayerBridge"
 
-interface BeersDomainLayerBridge< out S> : BaseDomainLayerBridge {
+interface BeersDomainLayerBridge<out S> : BaseDomainLayerBridge {
 
 
     /**
@@ -28,7 +26,7 @@ interface BeersDomainLayerBridge< out S> : BaseDomainLayerBridge {
 
 
 internal class BeersDomainLayerBridgeImpl(
-    private val fetchBeersListUc: DomainLayerContract.PresentationLayer.UseCase<Nothing,List<Beer>>
+    private val fetchBeersListUc: DomainLayerContract.PresentationLayer.UseCase<Nothing, List<Beer>>
 ) : BeersDomainLayerBridge<List<Beer>> {
     override fun fetchBeersList(
         scope: CoroutineScope,

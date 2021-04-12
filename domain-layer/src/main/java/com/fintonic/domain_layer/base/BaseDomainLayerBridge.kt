@@ -1,5 +1,5 @@
 package com.fintonic.domain_layer.base
 
-interface BaseDomainLayerBridge{
+interface BaseDomainLayerBridge {
     object None : BaseDomainLayerBridge
 }

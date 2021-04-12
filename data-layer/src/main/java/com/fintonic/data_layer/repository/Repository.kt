@@ -1,7 +1,5 @@
 package com.fintonic.data_layer.repository
 
-import arrow.core.left
-import arrow.core.right
 import com.fintonic.data_layer.remote.BeersRemoteDataSource
 import com.fintonic.domain_layer.DomainLayerContract
 import com.fintonic.domain_layer.domain.Beer

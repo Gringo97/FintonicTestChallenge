@@ -1,19 +1,16 @@
 package com.fintonic.presentation_layer.viewmodels
 
 import androidx.lifecycle.viewModelScope
-import arrow.core.None
 import com.fintonic.domain_layer.domain.Beer
 import com.fintonic.domain_layer.domain.FailureBo
 import com.fintonic.domain_layer.feature.BeersDomainLayerBridge
 import com.fintonic.presentation_layer.base.BaseMvvmViewModel
-import com.fintonic.presentation_layer.base.ScreenState
-import com.fintonic.presentation_layer.domain.boToVoFailure
 import com.fintonic.presentation_layer.screen_state.BeersListState
 
 
 class BeersListViewModel(
-    bridge: BeersDomainLayerBridge< List<Beer>>
-) : BaseMvvmViewModel<BeersDomainLayerBridge< List<Beer>>, BeersListState>(bridge) {
+    bridge: BeersDomainLayerBridge<List<Beer>>
+) : BaseMvvmViewModel<BeersDomainLayerBridge<List<Beer>>, BeersListState>(bridge) {
 
 
     fun onViewCreated() {
@@ -36,7 +33,7 @@ class BeersListViewModel(
     }
 
     private fun handleError(failureBo: FailureBo) {
-     //   _screenState.value =
-     //       ScreenState.Render(BeersListState.ShowError(failure = failureBo.boToVoFailure()))
+        //   _screenState.value =
+        //       ScreenState.Render(BeersListState.ShowError(failure = failureBo.boToVoFailure()))
     }
 }

@@ -6,7 +6,7 @@ import com.squareup.moshi.JsonClass
 import okhttp3.ResponseBody
 
 @JsonClass(generateAdapter = true)
-data class BeersDtoWrapper(val value : List<BeerDto>)
+data class BeersDtoWrapper(val value: List<BeerDto>)
 
 @JsonClass(generateAdapter = true)
 data class BeerDto(
@@ -56,7 +56,7 @@ data class BeerDto(
 
 @JsonClass(generateAdapter = true)
 data class FoodPairingWrapper(
-   val list : List<String>
+    val list: List<String>
 )
 
 @JsonClass(generateAdapter = true)
@@ -68,6 +68,7 @@ data class IngredientsDto(
     @Json(name = "yeast")
     val yeast: String
 )
+
 @JsonClass(generateAdapter = true)
 data class HopDto(
     @Json(name = "add")
@@ -135,6 +136,7 @@ sealed class FailureDto(val msg: String?) {
         msg: String?,
         val errorBody: ResponseBody? = null
     ) : FailureDto(msg = msg)
+
     object NoData : FailureDto(msg = ErrorMessage.ERROR_NO_DATA)
     object Unknown : FailureDto(msg = ErrorMessage.ERROR_UNKNOWN)
     class Error(msg: String?) : FailureDto(msg = msg)

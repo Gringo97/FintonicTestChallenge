@@ -1,6 +1,5 @@
 package com.fintonic.domain_layer.di
 
-import arrow.core.None
 import com.fintonic.domain_layer.DomainLayerContract
 import com.fintonic.domain_layer.DomainLayerContract.DataLayer.Companion.BEER_LIST_REPOSITORY_TAG
 import com.fintonic.domain_layer.domain.Beer
@@ -34,11 +33,6 @@ val domainLayerModule = module(override = true) {
             )
         )
     }
-
-
-
-
-
 
 
 }
