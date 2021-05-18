@@ -3,7 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.BeersListFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".beer_list.ui.BeersListFragment"
     android:background="@color/cardview_light_background">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/beers_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:orientation="vertical"
+        />
 
 </FrameLayout>

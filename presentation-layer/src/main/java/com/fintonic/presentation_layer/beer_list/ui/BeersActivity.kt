@@ -1,12 +1,12 @@
-package com.fintonic.presentation_layer.activity
+package com.fintonic.presentation_layer.beer_list.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.fintonic.domain_layer.base.BaseDomainLayerBridge
 import com.fintonic.presentation_layer.R
 import com.fintonic.presentation_layer.base.BaseMvvmView
-import com.fintonic.presentation_layer.screen_state.BeersActivityState
-import com.fintonic.presentation_layer.viewmodels.BeersActivityViewModel
+import com.fintonic.presentation_layer.beer_list.screen_state.BeersActivityState
+import com.fintonic.presentation_layer.beer_list.viewmodels.BeersActivityViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class BeersActivity :
@@ -21,5 +21,9 @@ class BeersActivity :
     }
 
 
-    override fun processRenderState(renderState: BeersActivityState?) {}
+    override fun processRenderState(renderState: BeersActivityState) {
+    }
+
+    override fun initModel() {
+    }
 }

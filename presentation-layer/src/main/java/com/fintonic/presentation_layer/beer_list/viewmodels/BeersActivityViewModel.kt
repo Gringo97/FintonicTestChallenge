@@ -1,8 +1,8 @@
-package com.fintonic.presentation_layer.viewmodels
+package com.fintonic.presentation_layer.beer_list.viewmodels
 
 import com.fintonic.domain_layer.base.BaseDomainLayerBridge
 import com.fintonic.presentation_layer.base.BaseMvvmViewModel
-import com.fintonic.presentation_layer.screen_state.BeersActivityState
+import com.fintonic.presentation_layer.beer_list.screen_state.BeersActivityState
 
 /**
  * This [BaseMvvmViewModel] handles the 'splash' feature view-model. Therefore, it is in charge of
@@ -12,7 +12,4 @@ import com.fintonic.presentation_layer.screen_state.BeersActivityState
  * All results update an observable variable, [_screenState], with [BeersActivityState] values.
  */
 class BeersActivityViewModel(bridge: BaseDomainLayerBridge.None) :
-    BaseMvvmViewModel<BaseDomainLayerBridge.None, BeersActivityState>(bridge = bridge) {
-
-
-}
+    BaseMvvmViewModel<BaseDomainLayerBridge.None, BeersActivityState>(bridge = bridge)

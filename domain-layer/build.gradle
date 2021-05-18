@@ -34,14 +34,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_core_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines_core"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
 
     // 3rd party libraries
-    implementation "org.koin:koin-android:$koin_version"
-    api "io.arrow-kt:arrow-core:$arrow_version"
-    api "io.arrow-kt:arrow-syntax:$arrow_version"
+    implementation "org.koin:koin-android:$versions.koin"
+    api "io.arrow-kt:arrow-core:$versions.arrow"
+    api "io.arrow-kt:arrow-syntax:$versions.arrow"
 
 
     testImplementation 'junit:junit:4.+'

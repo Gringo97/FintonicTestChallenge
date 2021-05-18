@@ -1,8 +1,8 @@
 package com.fintonic.presentation_layer.base
 
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.Observer
 import com.fintonic.domain_layer.base.BaseDomainLayerBridge
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 /**
  * This parametrized interface is intended to be implemented by any app presentation-layer view which aims to be
@@ -16,21 +16,18 @@ import com.fintonic.domain_layer.base.BaseDomainLayerBridge
  */
 interface BaseMvvmView<T : BaseMvvmViewModel<S, U>, S : BaseDomainLayerBridge, U : BaseState> {
 
-    val viewModel: T?
+    val viewModel: T
 
     /**
      * Handles the possible state values
      *
      * @param renderState the actual state, extending from U
      */
-    fun processRenderState(renderState: U?)
+    fun processRenderState(renderState: U)
 
-    fun observeViewModel(lifecycleOwner: LifecycleOwner) {
-        viewModel?.screenState?.observe(lifecycleOwner, Observer { screenState ->
-            when (screenState) {
-                is ScreenState.Render<U> -> processRenderState(screenState.renderState)
-            }
-        })
-    }
+    /**
+     * Init viewModel
+     */
+    fun initModel()
 
 }

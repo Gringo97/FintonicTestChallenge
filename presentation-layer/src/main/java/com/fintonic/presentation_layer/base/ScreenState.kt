@@ -5,5 +5,7 @@ package com.fintonic.presentation_layer.base
  *
  */
 sealed class ScreenState<out T : BaseState> {
-    class Render<out T : BaseState>(val renderState: T?) : ScreenState<T>()
+    object Idle : ScreenState<Nothing>()
+    object Loading : ScreenState<Nothing>()
+    class Render<out T : BaseState>(val renderState: T) : ScreenState<T>()
 }

@@ -12,7 +12,6 @@ interface BeersRemoteDataSource {
 
     companion object {
         const val BEERS_REMOTE_DATA_SOURCE_TAG = "beersRemoteDataSource"
-        const val RETROFIT_MOSHI_TAG = "retrofitMoshi"
         const val RETROFIT_BEERS_TAG = "RETROFIT_BEERS_TAG"
         const val BASE_PUNK_API_URL = "https://api.punkapi.com"
     }
@@ -27,8 +26,10 @@ interface BeersRemoteDataSource {
 class BeersRemoteDataSourceImpl(private val retrofitBuilder: Retrofit) : BeersRemoteDataSource {
     override suspend fun fetchBeersList() =
         retrofitBuilder.create(PunkApi::class.java).getBeersAsync().safeCall(
-            transform = {
-                it.map { it.dtoToBo() }
+            transform = { listBeerDto ->
+                listBeerDto.map { beerDto ->
+                    beerDto.dtoToBo()
+                }
             }
         )
 }

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/BeersListFragment"
-        android:name="com.fintonic.presentation_layer.fragments.BeersListFragment"
+        android:name="com.fintonic.presentation_layer.beer_list.ui.BeersListFragment"
         android:label="BeersListFragment"
         tools:layout="@layout/beers_list_fragment" />
 

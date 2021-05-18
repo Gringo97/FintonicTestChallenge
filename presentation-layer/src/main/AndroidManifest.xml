@@ -3,7 +3,7 @@
     package="com.fintonic.presentation_layer">
 
     <application>
-        <activity android:name=".activity.BeersActivity">
+        <activity android:name="com.fintonic.presentation_layer.beer_list.ui.BeersActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

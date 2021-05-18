@@ -1,9 +1,18 @@
 package com.fintonic.presentation_layer.domain
 
+import com.fintonic.domain_layer.domain.Beer
 import com.fintonic.domain_layer.domain.FailureBo
 
 
 private const val DEFAULT_STRING_VALUE = "none"
+
+
+
+fun Beer.boToVo() = BeerVo(
+    id = this.id,
+    imgUrl = this.imageUrl,
+    name = this.name
+)
 
 
 /**

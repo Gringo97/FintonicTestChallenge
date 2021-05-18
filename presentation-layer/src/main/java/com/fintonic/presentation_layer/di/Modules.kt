@@ -2,8 +2,8 @@ package com.fintonic.presentation_layer.di
 
 import com.fintonic.domain_layer.base.BaseDomainLayerBridge
 import com.fintonic.domain_layer.feature.BEERS_BRIDGE_TAG
-import com.fintonic.presentation_layer.viewmodels.BeersActivityViewModel
-import com.fintonic.presentation_layer.viewmodels.BeersListViewModel
+import com.fintonic.presentation_layer.beer_list.viewmodels.BeersActivityViewModel
+import com.fintonic.presentation_layer.beer_list.viewmodels.BeersListViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module

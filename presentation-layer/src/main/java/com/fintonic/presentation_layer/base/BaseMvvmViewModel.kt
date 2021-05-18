@@ -6,7 +6,10 @@ import androidx.lifecycle.ViewModel
 import com.fintonic.domain_layer.base.BaseDomainLayerBridge
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import org.koin.core.component.KoinComponent
 import kotlin.coroutines.CoroutineContext
 
@@ -20,30 +23,15 @@ import kotlin.coroutines.CoroutineContext
  * @property coroutineContext a context to host the coroutine
  *
  */
+@ExperimentalCoroutinesApi
 abstract class BaseMvvmViewModel<T : BaseDomainLayerBridge, S : BaseState>(protected val bridge: T) :
-    ViewModel(),
-    CoroutineScope,
-    KoinComponent {
+    ViewModel(){
 
-    val screenState: LiveData<ScreenState<S>>
+    protected val _screenState: MutableStateFlow<ScreenState<S>> by lazy { MutableStateFlow(ScreenState.Idle) }
+    val screenState: StateFlow<ScreenState<S>>
         get() {
-            if (!::_screenState.isInitialized) {
-                _screenState = MutableLiveData()
-            }
             return _screenState
         }
-    protected lateinit var _screenState: MutableLiveData<ScreenState<S>>
 
-    private val viewModelJob = SupervisorJob()
-    override val coroutineContext: CoroutineContext
-        get() = Dispatchers.IO + viewModelJob
-
-    /**
-     * Cancel all coroutines when the ViewModel is cleared
-     */
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
-    }
 
 }

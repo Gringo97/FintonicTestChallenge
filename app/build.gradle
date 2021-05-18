@@ -39,8 +39,8 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.core:core-ktx:$corektx_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "androidx.core:core-ktx:$versions.corektx"
 
     // Architecture modules
     implementation project(path: ':data-layer')
@@ -48,7 +48,7 @@ dependencies {
     implementation project(path: ':domain-layer')
 
     // 3rd party libraries
-    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android:$versions.koin"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

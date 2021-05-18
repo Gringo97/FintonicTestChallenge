@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/cardview_dark_background"
     tools:background="@color/cardview_dark_background"
-    tools:context=".activity.BeersActivity">
+    tools:context=".beer_list.ui.BeersActivity">
 
     <fragment
         android:id="@+id/nav_host"

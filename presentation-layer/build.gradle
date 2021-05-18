@@ -38,22 +38,25 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:$androidxappcompat_version"
-    implementation "androidx.core:core-ktx:$corektx_version"
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "androidx.appcompat:appcompat:$versions.androidxappcompat"
+    implementation "androidx.core:core-ktx:$versions.corektx"
+    implementation "androidx.appcompat:appcompat:$versions.appcompat"
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation"
 
     // other modules
     implementation project(':domain-layer')
     // 3rd party libraries
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-android-viewmodel:$koin_version"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "org.koin:koin-android:$versions.koin"
+    implementation "org.koin:koin-android-viewmodel:$versions.koin"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+
+    //Picasso
+    implementation "com.squareup.picasso:picasso:$versions.picasso"
 
     //Material
-    api "com.google.android.material:material:$material_version"
+    api "com.google.android.material:material:$versions.material"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'

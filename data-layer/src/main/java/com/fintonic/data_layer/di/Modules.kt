@@ -3,7 +3,7 @@ package com.fintonic.data_layer.di
 import com.fintonic.data_layer.remote.BeersRemoteDataSource
 import com.fintonic.data_layer.remote.BeersRemoteDataSource.Companion.BASE_PUNK_API_URL
 import com.fintonic.data_layer.remote.BeersRemoteDataSource.Companion.BEERS_REMOTE_DATA_SOURCE_TAG
-import com.fintonic.data_layer.remote.BeersRemoteDataSource.Companion.RETROFIT_MOSHI_TAG
+import com.fintonic.data_layer.remote.BeersRemoteDataSource.Companion.RETROFIT_BEERS_TAG
 import com.fintonic.data_layer.remote.BeersRemoteDataSourceImpl
 import com.fintonic.data_layer.repository.Repository
 import com.fintonic.domain_layer.DomainLayerContract
@@ -37,12 +37,12 @@ val dataLayerModule = module(override = true) {
     // data-source
 
     factory<BeersRemoteDataSource>(named(name = BEERS_REMOTE_DATA_SOURCE_TAG)) {
-        BeersRemoteDataSourceImpl(get(named(name = RETROFIT_MOSHI_TAG)))
+        BeersRemoteDataSourceImpl(get(named(name = RETROFIT_BEERS_TAG)))
     }
 
 
 
-    single<Retrofit>(named(name = RETROFIT_MOSHI_TAG)) {
+    single<Retrofit>(named(name = RETROFIT_BEERS_TAG)) {
         val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create(moshi))

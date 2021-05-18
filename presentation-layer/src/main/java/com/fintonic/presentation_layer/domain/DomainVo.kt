@@ -2,6 +2,14 @@ package com.fintonic.presentation_layer.domain
 
 import com.fintonic.domain_layer.domain.ErrorMessage
 
+
+data class BeerVo(
+    val id: Int,
+    val imgUrl : String,
+    val name : String
+)
+
+
 /**
  * A class which models any failure coming from the 'domain-layer' module
  */
